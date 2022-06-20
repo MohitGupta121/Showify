@@ -8,6 +8,6 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET(Constants.END_POINT)
-    suspend fun getTvShows():Response<TvShowResponse>
+    suspend fun getTvShows(): Response<TvShowResponse>
 
 }

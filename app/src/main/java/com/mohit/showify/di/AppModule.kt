@@ -20,6 +20,27 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    @Singleton
+    @Provides
+    fun provideOkHttpClient(@ApplicationContext appContext: Context): OkHttpClient {
+        val collector = RQCollector(
+            context = appContext,
+            sdkKey = "veXWzKm7YEsuhBwHxF0N",
+        )
+        val rqInterceptor = RQInterceptor.Builder(appContext)
+            .collector(collector)
+            .build()
+
+        val logging = HttpLoggingInterceptor()
+        logging.level = HttpLoggingInterceptor.Level.BODY
+
+
+        return OkHttpClient.Builder()
+            .addInterceptor(logging)
+            .addInterceptor(rqInterceptor)
+            .build()
+    }
+
     @Provides
     fun provideBaseUrl() = Constants.BASE_URL
 
@@ -29,6 +50,7 @@ object AppModule {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
             .build()
             .create(ApiService::class.java)
 

@@ -26,17 +26,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     private fun setUpRv() {
         tvShowAdapter = TvShowAdapter()
-
         binding.recyclerView.apply {
             adapter = tvShowAdapter
             layoutManager = LinearLayoutManager(
                 this@MainActivity, LinearLayoutManager.HORIZONTAL,
                 false
             )
-
             setHasFixedSize(true)
         }
 
@@ -46,10 +43,8 @@ class MainActivity : AppCompatActivity() {
                 this@MainActivity, LinearLayoutManager.HORIZONTAL,
                 false
             )
-
             setHasFixedSize(true)
         }
-
 
         binding.rvRecentlyAdded.apply {
             adapter = tvShowAdapter
@@ -57,15 +52,10 @@ class MainActivity : AppCompatActivity() {
                 this@MainActivity, LinearLayoutManager.HORIZONTAL,
                 false
             )
-
             setHasFixedSize(true)
         }
-
-
         viewModel.responseTvShow.observe(this, { listTvShows ->
-
             tvShowAdapter.tvShows = listTvShows
-
         })
 
     }
