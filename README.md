@@ -12,7 +12,7 @@
 
 ***You can Install and test Showify app from below 👇***
 
-[![Disease Detection](https://img.shields.io/badge/DiseaseDetection✅-APK-red.svg?style=for-the-badge&logo=android)](https://github.com/MohitGupta121/DiseaseDetection/suites/6711576160/artifacts/255441035)
+[![Showify](https://img.shields.io/badge/Showify✅-APK-red.svg?style=for-the-badge&logo=android)](https://github.com/MohitGupta121/Showify/releases/download/v1.0/app.apk)
 
 ## ⚙️ Features
 * Show all latest, upcoming TV shows from [TV Maze](tvmaze.com)
