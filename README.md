@@ -1,6 +1,8 @@
 # Showify
 
-![Build](https://github.com/MohitGupta121/DiseaseDetection/workflows/Build/badge.svg?branch=main)
+[![Build](https://github.com/MohitGupta121/Showify/workflows/Build/badge.svg?branch=main)](https://github.com/MohitGupta121/Showify/actions?query=workflow%3ABuild)
+[![Lint](https://github.com/MohitGupta121/Showify/workflows/Lint/badge.svg?branch=main)](https://github.com/MohitGupta121/Showify/actions?query=workflow%3ALint)
+
 
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
@@ -13,7 +15,7 @@
 [![Disease Detection](https://img.shields.io/badge/DiseaseDetection✅-APK-red.svg?style=for-the-badge&logo=android)](https://github.com/MohitGupta121/DiseaseDetection/suites/6711576160/artifacts/255441035)
 
 ## ⚙️ Features
-* Show all latest, upcoming TV shows from [![TV Maze](tvmaze.com)] 
+* Show all latest, upcoming TV shows from [TV Maze](tvmaze.com)
 
 ## 🚀 Technology Used
 
