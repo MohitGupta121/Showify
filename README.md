@@ -1,7 +1,7 @@
 # Showify
 
 [![Build](https://github.com/MohitGupta121/Showify/workflows/Build/badge.svg?branch=main)](https://github.com/MohitGupta121/Showify/actions?query=workflow%3ABuild)
-[![Lint](https://github.com/MohitGupta121/Showify/workflows/Lint/badge.svg?branch=main)](https://github.com/MohitGupta121/Showify/actions?query=workflow%3ALint)
+[![Lint](https://github.com/hellosagar/AssigmentHub/workflows/Lint/badge.svg?branch=main)](https://github.com/hellosagar/AssigmentHub/actions?query=workflow%3ALint)
 
 
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
