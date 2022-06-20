@@ -1,6 +1,8 @@
 package com.mohit.showify
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,7 +25,34 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         setUpRv()
+        shimmer()
+    }
 
+    private fun shimmer() {
+        if (viewModel.isLoading) {
+            binding.shimmerEffectRv.startShimmer()
+            binding.shimmerEffectRvEpisodes.startShimmer()
+            binding.shimmerRvRecentlyAdded.startShimmer()
+
+            binding.rvEpisodes.visibility = View.GONE
+            binding.rvRecentlyAdded.visibility = View.GONE
+            binding.recyclerView.visibility = View.GONE
+        }
+        viewModel.responseTvShow.observe(this, { isLoading ->
+            if (!viewModel.isLoading) {
+                binding.shimmerEffectRv.stopShimmer()
+                binding.shimmerEffectRvEpisodes.stopShimmer()
+                binding.shimmerRvRecentlyAdded.stopShimmer()
+
+                binding.shimmerEffectRv.visibility = View.GONE
+                binding.shimmerEffectRvEpisodes.visibility = View.GONE
+                binding.shimmerRvRecentlyAdded.visibility = View.GONE
+
+                binding.rvEpisodes.visibility = View.VISIBLE
+                binding.rvRecentlyAdded.visibility = View.VISIBLE
+                binding.recyclerView.visibility = View.VISIBLE
+            }
+        })
     }
 
     private fun setUpRv() {
@@ -54,9 +83,9 @@ class MainActivity : AppCompatActivity() {
             )
             setHasFixedSize(true)
         }
+
         viewModel.responseTvShow.observe(this, { listTvShows ->
             tvShowAdapter.tvShows = listTvShows
         })
-
     }
 }

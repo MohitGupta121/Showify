@@ -16,6 +16,8 @@ class TvShowViewModel
 @Inject
 constructor(private val repository: TvShowRepository) : ViewModel() {
 
+    var isLoading:Boolean = true
+
     private val _response = MutableLiveData<List<TvShowItem>>()
     val responseTvShow: LiveData<List<TvShowItem>>
         get() = _response
@@ -28,6 +30,7 @@ constructor(private val repository: TvShowRepository) : ViewModel() {
         repository.getTvShows().let {response ->
 
             if (response.isSuccessful){
+                isLoading = false
                 _response.postValue(response.body())
             }else{
                 Log.d("tag", "getAllTvShows Error: ${response.code()}")
@@ -36,16 +39,3 @@ constructor(private val repository: TvShowRepository) : ViewModel() {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

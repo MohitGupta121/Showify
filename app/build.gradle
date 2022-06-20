@@ -75,4 +75,7 @@ dependencies {
     // Requestly Interceptor
     debugImplementation "io.requestly.rqinterceptor:library:1.1.5"
 
+    //shimmer effect
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
 }
