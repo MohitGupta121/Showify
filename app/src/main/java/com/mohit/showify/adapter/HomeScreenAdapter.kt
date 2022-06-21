@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.mohit.showify.databinding.TvShowRvLayoutBinding
+import com.mohit.showify.databinding.RvItemLayoutBinding
 import com.mohit.showify.models.TvShowItem
 
 class HomeScreenAdapter : RecyclerView.Adapter<HomeScreenAdapter.MyViewHolder>() {
 
-    inner class MyViewHolder(val binding: TvShowRvLayoutBinding) :
+    inner class MyViewHolder(val binding: RvItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root)
 
 
@@ -34,7 +34,7 @@ class HomeScreenAdapter : RecyclerView.Adapter<HomeScreenAdapter.MyViewHolder>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
-            TvShowRvLayoutBinding.inflate(
+            RvItemLayoutBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )
