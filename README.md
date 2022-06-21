@@ -8,7 +8,7 @@
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
 ![Twitter Follow](https://img.shields.io/twitter/follow/Mohit_Gupta121?label=Follow&style=social)
 
-**Showify** is a my first simple ✅ Android application 📱, where I learn how to use dagger-hilt, retrofit2, mvvm, livedata, Requestly Interceptor and so much more...
+**Showify** is a my first simple ✅ Android application 📱 using DI, where I learn how to use dagger-hilt, retrofit2, mvvm, livedata, Requestly Interceptor and so much more...
 
 ***You can Install and test Showify app from below 👇***
 
