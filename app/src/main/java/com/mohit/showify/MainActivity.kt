@@ -1,22 +1,21 @@
 package com.mohit.showify
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mohit.showify.adapter.TvShowAdapter
+import com.mohit.showify.adapter.HomeScreenAdapter
 import com.mohit.showify.databinding.ActivityMainBinding
-import com.mohit.showify.viewmodel.TvShowViewModel
+import com.mohit.showify.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: TvShowViewModel by viewModels()
-    private lateinit var tvShowAdapter: TvShowAdapter
+    private val homeViewModel: HomeViewModel by viewModels()
+    private lateinit var homeScreenAdapter: HomeScreenAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun shimmer() {
-        if (viewModel.isLoading) {
+        if (homeViewModel.isLoading) {
             binding.shimmerEffectRv.startShimmer()
             binding.shimmerEffectRvEpisodes.startShimmer()
             binding.shimmerRvRecentlyAdded.startShimmer()
@@ -38,8 +37,8 @@ class MainActivity : AppCompatActivity() {
             binding.rvRecentlyAdded.visibility = View.GONE
             binding.recyclerView.visibility = View.GONE
         }
-        viewModel.responseTvShow.observe(this, { isLoading ->
-            if (!viewModel.isLoading) {
+        homeViewModel.responseTvShow.observe(this) {
+            if (!homeViewModel.isLoading) {
                 binding.shimmerEffectRv.stopShimmer()
                 binding.shimmerEffectRvEpisodes.stopShimmer()
                 binding.shimmerRvRecentlyAdded.stopShimmer()
@@ -52,13 +51,13 @@ class MainActivity : AppCompatActivity() {
                 binding.rvRecentlyAdded.visibility = View.VISIBLE
                 binding.recyclerView.visibility = View.VISIBLE
             }
-        })
+        }
     }
 
     private fun setUpRv() {
-        tvShowAdapter = TvShowAdapter()
+        homeScreenAdapter = HomeScreenAdapter()
         binding.recyclerView.apply {
-            adapter = tvShowAdapter
+            adapter = homeScreenAdapter
             layoutManager = LinearLayoutManager(
                 this@MainActivity, LinearLayoutManager.HORIZONTAL,
                 false
@@ -67,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.rvEpisodes.apply {
-            adapter = tvShowAdapter
+            adapter = homeScreenAdapter
             layoutManager = LinearLayoutManager(
                 this@MainActivity, LinearLayoutManager.HORIZONTAL,
                 false
@@ -76,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.rvRecentlyAdded.apply {
-            adapter = tvShowAdapter
+            adapter = homeScreenAdapter
             layoutManager = LinearLayoutManager(
                 this@MainActivity, LinearLayoutManager.HORIZONTAL,
                 false
@@ -84,8 +83,8 @@ class MainActivity : AppCompatActivity() {
             setHasFixedSize(true)
         }
 
-        viewModel.responseTvShow.observe(this, { listTvShows ->
-            tvShowAdapter.tvShows = listTvShows
-        })
+        homeViewModel.responseTvShow.observe(this) { listTvShows ->
+            homeScreenAdapter.tvShows = listTvShows
+        }
     }
 }

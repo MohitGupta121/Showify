@@ -9,7 +9,7 @@ import coil.load
 import com.mohit.showify.databinding.TvShowRvLayoutBinding
 import com.mohit.showify.models.TvShowItem
 
-class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.MyViewHolder>() {
+class HomeScreenAdapter : RecyclerView.Adapter<HomeScreenAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(val binding: TvShowRvLayoutBinding) :
         RecyclerView.ViewHolder(binding.root)

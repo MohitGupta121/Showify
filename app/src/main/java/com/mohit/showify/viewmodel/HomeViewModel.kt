@@ -6,15 +6,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mohit.showify.models.TvShowItem
-import com.mohit.showify.repository.TvShowRepository
+import com.mohit.showify.repository.HomeScreenRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class TvShowViewModel
+class HomeViewModel
 @Inject
-constructor(private val repository: TvShowRepository) : ViewModel() {
+constructor(private val repository: HomeScreenRepository) : ViewModel() {
 
     var isLoading:Boolean = true
 
@@ -26,6 +26,9 @@ constructor(private val repository: TvShowRepository) : ViewModel() {
         getAllTvShows()
     }
 
+    /**
+     * @return response from API
+     */
     private fun getAllTvShows() = viewModelScope.launch {
         repository.getTvShows().let {response ->
 

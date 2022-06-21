@@ -20,6 +20,9 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    /**
+     * Requestly Interceptor
+     */
     @Singleton
     @Provides
     fun provideOkHttpClient(@ApplicationContext appContext: Context): OkHttpClient {
