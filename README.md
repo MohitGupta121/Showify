@@ -1,6 +1,6 @@
 # Showify
 
-[![Build](https://github.com/MohitGupta121/Showify/workflows/Build/badge.svg?branch=main)](https://github.com/MohitGupta121/Showify/actions?query=workflow%3ABuild)
+[![Build](https://github.com/hellosagar/AssigmentHub/workflows/Build/badge.svg?branch=main)](https://github.com/hellosagar/AssigmentHub/actions?query=workflow%3ABuild)
 [![Lint](https://github.com/hellosagar/AssigmentHub/workflows/Lint/badge.svg?branch=main)](https://github.com/hellosagar/AssigmentHub/actions?query=workflow%3ALint)
 
 
@@ -27,6 +27,10 @@
 * Livedata
 * Coroutine Lifecycle Scopes 
 * Requestly Interceptor
+
+## 🎥 Preview
+
+https://user-images.githubusercontent.com/76530270/174883120-d9505395-dae0-46a6-9f82-db63514a2497.mp4
 
 
 ## 📸 Screenshots
